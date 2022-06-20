@@ -37,6 +37,7 @@ func (this *MyLinkedList) AddAtHead(val int) {
 func (this *MyLinkedList) AddAtTail(val int) {
 	if this.head == nil {
 		this.AddAtHead(val)
+		return
 	}
 
 	current := this.head
@@ -54,6 +55,7 @@ func (this *MyLinkedList) AddAtTail(val int) {
 func (this *MyLinkedList) AddAtIndex(index int, val int) {
 	if index == 0 {
 		this.AddAtHead(val)
+		return
 	}
 	next, prev := this.getNodeAndPrev(index)
 	if next == nil && prev == nil {
