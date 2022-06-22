@@ -4,15 +4,7 @@ func findDiagonalOrder(mat [][]int) []int {
 	var result []int
 
 	lastYIndex := len(mat) - 1
-	if lastYIndex < 0 {
-		return result
-	}
-
 	lastXIndex := len(mat[0]) - 1
-
-	if lastXIndex < 0 {
-		return result
-	}
 
 	var x int
 	var y int
