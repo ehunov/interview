@@ -31,6 +31,12 @@ func TestFindDiagonalOrder(t *testing.T) {
 			},
 			[]int{1},
 		},
+		{
+			args{
+				[][]int{},
+			},
+			[]int{},
+		},
 	}
 	for i, tt := range tests {
 		t.Run(string(rune(i)), func(t *testing.T) {

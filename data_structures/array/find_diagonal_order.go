@@ -1,19 +1,22 @@
 package array
 
 func findDiagonalOrder(mat [][]int) []int {
-	var result []int
+	result := []int{}
 
-	lastYIndex := len(mat) - 1
-	lastXIndex := len(mat[0]) - 1
+	yLength := len(mat)
+	if yLength == 0 {
+		return result
+	}
 
-	var x int
-	var y int
+	xLength := len(mat[0])
+	elementsCount := yLength * xLength
+	result = make([]int, elementsCount)
+	lastYIndex, lastXIndex := yLength-1, xLength-1
 
-	elementsCount := (lastXIndex + 1) * (lastYIndex + 1)
+	x, y := 0, 0
 
 	for i := 0; i < elementsCount; i++ {
-		value := mat[y][x]
-		result = append(result, value)
+		result[i] = mat[y][x]
 
 		if (x+y)%2 == 0 {
 			if y == 0 && x != lastXIndex {
