@@ -32,13 +32,12 @@ func TestDominantIndex(t *testing.T) {
 			},
 			0,
 		},
-
 		{
 			"",
 			args{
 				[]int{},
 			},
-			0,
+			-1,
 		},
 	}
 	for _, tt := range tests {
