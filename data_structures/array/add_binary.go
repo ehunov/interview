@@ -1,49 +1,41 @@
 package array
 
 import (
-	"math"
 	"strings"
 )
 
 func addBinary(a string, b string) string {
 	aLastIndex, bLastIndex := len(a)-1, len(b)-1
-	maxIndex := int(math.Max(float64(aLastIndex), float64(bLastIndex)))
-	result := make([]string, maxIndex+1)
-	appendBits := make([]string, maxIndex+1)
-	for i := 0; i <= maxIndex; i++ {
-		curIndex := maxIndex - i
-		appendBit := appendBits[curIndex]
-		if appendBit == "" {
-			appendBit = "0"
-		}
-		bBit := "0"
-		aBit := "0"
+	if bLastIndex > aLastIndex {
+		return addBinary(b, a)
+	}
+
+	bitSum := 0
+	result := make([]string, aLastIndex+1)
+	for i := 0; i <= aLastIndex; i++ {
+		curIndex := aLastIndex - i
+		bitSum += int(a[curIndex] - '0')
 		if bLastIndex >= i {
-			bBit = string(rune(b[bLastIndex-i]))
-		}
-		if aLastIndex >= i {
-			aBit = string(rune(a[aLastIndex-i]))
+			bitSum += int(b[bLastIndex-i] - '0')
 		}
 
-		if aBit == "1" && bBit == "1" {
-			result[curIndex] = appendBit
-			if curIndex != 0 {
-				appendBits[curIndex-1] = "1"
-			} else {
-				result = append([]string{"1"}, result...)
-			}
-		} else if (aBit == "1" || bBit == "1") && appendBit == "1" {
+		switch bitSum {
+		case 0:
 			result[curIndex] = "0"
-			if curIndex != 0 {
-				appendBits[curIndex-1] = "1"
-			} else {
-				result = append([]string{"1"}, result...)
-			}
-		} else if aBit == "0" && bBit == "0" {
-			result[curIndex] = appendBit
-		} else {
+		case 1:
 			result[curIndex] = "1"
+			bitSum = 0
+		case 2:
+			result[curIndex] = "0"
+			bitSum = 1
+		case 3:
+			result[curIndex] = "1"
+			bitSum = 1
 		}
+	}
+
+	if bitSum > 0 {
+		result = append([]string{"1"}, result...)
 	}
 
 	return strings.Join(result, "")
