@@ -1,3 +1,5 @@
+// https://leetcode.com/explore/learn/card/array-and-string/205/array-two-pointer-technique/1183/
+
 package array
 
 func reverseString(s []byte) []byte {

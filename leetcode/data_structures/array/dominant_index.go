@@ -1,3 +1,5 @@
+// https://leetcode.com/explore/learn/card/array-and-string/201/introduction-to-array/1147/
+
 package array
 
 func dominantIndex(nums []int) int {
