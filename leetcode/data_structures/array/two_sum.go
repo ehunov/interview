@@ -1,3 +1,5 @@
+// https://leetcode.com/explore/learn/card/array-and-string/205/array-two-pointer-technique/1153/
+
 package array
 
 func twoSum(numbers []int, target int) []int {
