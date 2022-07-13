@@ -34,12 +34,7 @@ func rotateWithAdditionalMemory(nums []int, k int) []int {
 }
 
 func computeNewIndex(curIndex int, lenNums int, k int) int {
-	newIndex := curIndex + k
-	for newIndex >= lenNums {
-		newIndex -= lenNums
-	}
-
-	return newIndex
+	return (curIndex + k) % lenNums
 }
 
 // O(n*k)
