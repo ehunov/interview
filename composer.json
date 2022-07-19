@@ -1,0 +1,28 @@
+{
+  "name": "ehunov/interview",
+  "description": "Interview fun",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "anton.ehunov",
+      "email": "anton.ehunov@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Ehunov\\Interview\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ehunov\\Interview\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.5.21"
+  },
+  "require": {
+    "psr/log": "^1.1"
+  }
+}
