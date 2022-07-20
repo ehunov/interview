@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Ehunov\Interview\leetcode\data_structures\array;
+namespace Ehunov\Interview\data_structures\array;
 
 use PHPUnit\Framework\TestCase;
 

@@ -2,7 +2,7 @@
 
 // https://leetcode.com/problems/merge-sorted-array/
 
-namespace Ehunov\Interview\leetcode\data_structures\array;
+namespace Ehunov\Interview\data_structures\array;
 
 final class merge_sorted
 {
